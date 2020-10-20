@@ -1,6 +1,6 @@
 package edu.uoc.pac3.tests;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.*; 
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -47,7 +47,7 @@ class Check {
 	@Test
 	@Order(2)
 	void testStationStringStringDoubleDoubleInt() {		
-		Exception ex = assertThrows(Exception.class, () ->new Station("Poblenou 1 asfdmñlak ñlasdkf ñlsak dskfñlkasdñl fa dfasf adsf", "Rambla Poblenou, 156", 34.5, 82, 10)); 
+		Exception ex = assertThrows(Exception.class, () ->new Station("Poblenou 1 asfdmï¿½lak ï¿½lasdkf ï¿½lsak dskfï¿½lkasdï¿½l fa dfasf adsf", "Rambla Poblenou, 156", 34.5, 82, 10)); 
 		assertEquals("[ERROR] Station's name cannot be longer than 50 characters", ex.getMessage());
 		
 		ex = assertThrows(Exception.class, () ->new Station("Poblenou 1", "Rambla Poblenou, 156", -94.5, 82, 10));
@@ -89,7 +89,7 @@ class Check {
 		}
 		
 		
-		Exception ex = assertThrows(Exception.class, () ->	s.setName("ksañlfkañk f kñalskf ñakñfdk sdfkañlkfd añlskfdñ lasdkfñlkaslf "));
+		Exception ex = assertThrows(Exception.class, () ->	s.setName("ksaï¿½lfkaï¿½k f kï¿½alskf ï¿½akï¿½fdk sdfkaï¿½lkfd aï¿½lskfdï¿½ lasdkfï¿½lkaslf "));
 		assertEquals("[ERROR] Station's name cannot be longer than 50 characters", ex.getMessage());
 	}
 	
@@ -110,8 +110,8 @@ class Check {
 	@Test
 	@Order(9)
 	void testSetStreet() {
-		s.getAddress().setStreet("Plaça Eivissa");
-		assertEquals("Plaça Eivissa",s.getAddress().getStreet());
+		s.getAddress().setStreet("Plaï¿½a Eivissa");
+		assertEquals("Plaï¿½a Eivissa",s.getAddress().getStreet());
 	}
 
 	@Test

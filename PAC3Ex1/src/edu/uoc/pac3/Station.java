@@ -7,16 +7,18 @@ public class Station {
 	private String name = "Default";
 	private int capacity = 24;
 	
-
+	private Address address;
 	
-	public Station() {
-		setId();
+	
+	public Station() throws Exception {
+		this("Default", "Sesame Street", 0.0, 0.0, 24);
 	}
 
 	
 	public Station(String name, String street, double latitude, double longitude, int capacity) throws Exception {
 
 		setName(name);
+		setAddress(street,latitude,longitude);
 		setCapacity(capacity);
 		setId();
 		
@@ -58,7 +60,6 @@ public class Station {
 	}
 
 	
-
 	
 	public int getCapacity() {
 		return capacity;
@@ -74,15 +75,20 @@ public class Station {
 	}
 
 
-	public Address getAddress () {
-		
+	public Address getAddress() {
+		return this.address;
 	}
 
 
 	public void setAddress(String street, double latitude, double longitude) throws Exception {
-		
-		
+		this.address = new Address(street, latitude, longitude);
 	}
+
+	
+	
+	}
+
+
 
 
 	
@@ -91,4 +97,3 @@ public class Station {
 
 
 
-}
