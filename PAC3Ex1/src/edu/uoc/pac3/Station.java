@@ -3,16 +3,11 @@ package edu.uoc.pac3;
 public class Station {
 	
 	private int id;
-	
 	private static int nextId = 0;
-	
 	private String name = "Default";
-	
 	private int capacity = 24;
 	
-	
 
-	
 	
 	public Station() {
 		setId();
@@ -24,6 +19,7 @@ public class Station {
 		setName(name);
 		setCapacity(capacity);
 		setId();
+		
 	}
 
 	
@@ -62,23 +58,7 @@ public class Station {
 	}
 
 	
-	public Address getAddress() {
-		
-		
-		return getAddress();
-		
-	}
 
-
-
-
-	public void setAddress(String street, double latitude, double longitude) throws Exception {
-		Address.setStreet(street);
-		Address.setLatitude(latitude);
-		Address.setLongitude(longitude);
-		
-		
-	}
 	
 	public int getCapacity() {
 		return capacity;
@@ -92,6 +72,21 @@ public class Station {
 			this.capacity = capacity;
 		}
 	}
+
+
+	public Address getAddress () {
+		
+	}
+
+
+	public void setAddress(String street, double latitude, double longitude) throws Exception {
+		
+		
+	}
+
+
+	
+
 
 
 
