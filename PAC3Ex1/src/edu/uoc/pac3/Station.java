@@ -32,7 +32,7 @@ public class Station {
 	
 	private void setId() {
 		id = nextId;
-		incNextId();
+		plusId();
 	}
 
 	
@@ -41,7 +41,7 @@ public class Station {
 	}
 
 	
-	private void incNextId() {
+	private void plusId() {
 		nextId++;
 	}
 
@@ -85,15 +85,6 @@ public class Station {
 	}
 
 	
+}
 	
-	}
-
-
-
-
 	
-
-
-
-
-
