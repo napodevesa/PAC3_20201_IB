@@ -1,16 +1,16 @@
 package edu.uoc.pac3;
 
-public class Adress {
+public class Address {
 	
-	private String street ;
+	private static String street = "Sesame Street";
 
-	private double latitude ;
+	private static double latitude = 0;
 	
-	private double longitude ;
+	private static double longitude = 0;
 
 
 	
-	public Adress(String street, double latitude, double longitude) throws Exception {
+	public Address(String street, double latitude, double longitude) throws Exception {
 		
 		setStreet(street);
 		setLatitude(latitude);
@@ -22,8 +22,8 @@ public class Adress {
 		return street;
 	}
 	
-	public void setStreet(String street) {
-		this.street = street;
+	public static void setStreet(String street) {
+		Address.street = street;
 	}
 	
 
@@ -31,11 +31,11 @@ public class Adress {
 		return latitude;
 	}
 
-	public void setLatitude(double latitude) throws Exception {
+	public static void setLatitude(double latitude) throws Exception {
 		if (latitude < -90 || latitude > 90) {
 			throw new Exception("[ERROR] Address latitude must be in range [-90,+90]");
 		} else {
-			this.latitude = latitude;
+			Address.latitude = latitude;
 		}
 	}
 
@@ -44,11 +44,11 @@ public class Adress {
 		return longitude;
 	}
 
-	public void setLongitude(double longitude)  throws Exception {
+	public static void setLongitude(double longitude)  throws Exception {
 		if (longitude < -180 || longitude > 180) {
 			throw new Exception("[ERROR] Address longitude must be in range [-180,+180]");
 		} else {
-			this.longitude = longitude;
+			Address.longitude = longitude;
 		}
 
 	}

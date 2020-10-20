@@ -9,6 +9,8 @@ public class Station {
 	private String name = "Default";
 	
 	private int capacity = 24;
+	
+	
 
 	
 	
@@ -60,14 +62,22 @@ public class Station {
 	}
 
 	
-	public Adress getAdress() {
-		return getAdress();
+	public Address getAddress() {
+		
+		
+		return getAddress();
+		
 	}
 
 
-	public void setAdress(String street, double latitude, double longitude) throws Exception {
+
+
+	public void setAddress(String street, double latitude, double longitude) throws Exception {
+		Address.setStreet(street);
+		Address.setLatitude(latitude);
+		Address.setLongitude(longitude);
 		
-	
+		
 	}
 	
 	public int getCapacity() {
