@@ -1,9 +1,9 @@
 package edu.uoc.pac3;
 
 /**
- * Address Station
+ * Address Class
  * 
- * @author Napoleón Devesa Dalio - ndev
+ * @author NDevesa
  * @version 1
  */
 

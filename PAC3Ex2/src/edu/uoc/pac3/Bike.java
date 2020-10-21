@@ -3,9 +3,9 @@ package edu.uoc.pac3;
 import java.time.LocalDate;
 
 /**
- * Address Station
+ *Bike Class
  * 
- * @author Napoleón Devesa Dalio ndev
+ * @author NDevesa
  * @version 1
  */
 
@@ -47,11 +47,7 @@ public class Bike {
 	public static void setNextId(int nextId) {
 		nextId++;
 	}
-	
-	
-	
-	
-	
+
 	/**
 	 * Constructor without parameters 
 	 * 

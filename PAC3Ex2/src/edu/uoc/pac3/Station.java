@@ -1,9 +1,9 @@
 package edu.uoc.pac3;
 
 /**
- * Class Station
+ * Station Class
  * 
- * @author Napoleón Devesa Dalio - ndev
+ * @author NDevesa
  * @version 1
  */
 
@@ -30,10 +30,12 @@ public class Station {
 	 */
 	private Address address;
 	
-	private Bike [] bikes;
-	 
-    Bike[] bike = new Bike[capacity] ;
+	private Bike[] bikes = new Bike[capacity] ;
 	
+	
+	
+	 
+    
 	/**
 	 * Constructor without parameters 
 	 * 
@@ -46,7 +48,7 @@ public class Station {
 	}
 	
 	/**
-	 * Constructor wiht parameters
+	 * Constructor with parameters
 	 * 
 	 * @param name      
 	 * @param street    
@@ -62,9 +64,7 @@ public class Station {
 		setName(name);
 		setAddress(street,latitude,longitude);
 		setCapacity(capacity);
-		setId();
-		
-		
+		setId();		
 		
 	}
 
@@ -158,6 +158,7 @@ public class Station {
 			throw new Exception("[ERROR] Station's capacity must be greater than 0");
 		} else {
 			this.capacity = capacity;
+			bikes = new Bike[capacity];
 		}
 	}
 
@@ -184,15 +185,16 @@ public class Station {
 
 	
 	
-	public Bike[] getBikes() {
-		return this.bikes;
+	public Bike [] getBikes() {
+		return bikes;
 	}
+	
 
 
 	public Boolean isFull() {
 		
 		for (int i = 0; i<= capacity;i++) {
-			if (bike[i] == null) {
+			if (bikes[i] == null) {
 				return false;
 			}
 		}
@@ -204,7 +206,7 @@ public class Station {
 	public Boolean isEmpty() {
 			
 		for (int i = 0; i<= capacity;i++) {
-			if (bike[i] == null) {
+			if (bikes[i] == null) {
 				return true;
 			}
 		}
@@ -221,7 +223,7 @@ public class Station {
 				return -1;
 			}
 			
-			if (bike[i] == null) {
+			if (bikes[i] == null) {
 				return i;
 			}
 		}
@@ -236,14 +238,13 @@ public class Station {
 		
 		int j = 0;
 		
-		for (int i = 0; i<= capacity;i++) {
+		for (int i = 0; i< capacity;i++) {
 			
-			if (bike[i] == null) {
+			if (isEmpty() == true) {
 				
-				j = j + 1;
+				j = j + 1 ;
 				
-			}else {
-				return 0;
+				
 			}
 			
 		}
@@ -255,9 +256,9 @@ public class Station {
 			
 			int i= 0;
 			
-			for (i = 0; i<= capacity;i++) {
+			for (i = 0; i < capacity; i ++) {
 				
-				if (bike[i] != null) {
+				if (bikes[i] != null) {
 					
 					return i;
 					
@@ -269,6 +270,47 @@ public class Station {
 			
 			return i;
 	}
+	
+	
+	public void addBike(Bike b) throws Exception {
+		
+		
+			
+			if (getParkingLotByBike(b) != -1) {
+				throw new Exception("[ERROR] This bike is already in this station");
+				
+			}
+			
+			if (isFull()) {
+				throw new Exception("[ERROR] This station is full");
+				
+			}
+			
+			if (b == null) {
+				throw new Exception("[ERROR] The bike cannot be null");
+				
+			}	
+	
+	
+			bikes[getFirstFreeParkingLot()] = b;
+			
+			b.setStation(this);
+		
+	}	
+	
+	public void removeBike(Bike bike) throws Exception {
+		if(getParkingLotByBike(bike) == -1) throw new Exception("[ERROR] This bike does not exist in this station");
+		
+		bikes[getParkingLotByBike(bike)] = null;
+		
+		bike.setStation(null);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 }	
-	
-	
