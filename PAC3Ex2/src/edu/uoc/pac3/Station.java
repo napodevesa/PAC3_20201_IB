@@ -156,6 +156,10 @@ public class Station {
 	public void setCapacity(int capacity) throws Exception {
 		if (capacity <= 0) {
 			throw new Exception("[ERROR] Station's capacity must be greater than 0");
+		} 
+		
+		else if (!this.isEmpty()){
+			throw new Exception("[ERROR] Station is not empty, therefore you cannot change its capacity");
 		} else {
 			this.capacity = capacity;
 			bikes = new Bike[capacity];
@@ -217,18 +221,17 @@ public class Station {
 	
 	public int getFirstFreeParkingLot() {
 		int i=0;
-		
+		if (isFull()) {
+			return -1;
+		}
 		for (i = 0; i<= capacity;i++) {
-			if (isFull()) {
-				return -1;
-			}
 			
 			if (bikes[i] == null) {
 				return i;
 			}
 		}
 		
-		return i;
+		return -1;
 	
 	
 	}
@@ -240,10 +243,9 @@ public class Station {
 		
 		for (int i = 0; i< capacity;i++) {
 			
-			if (isEmpty() == true) {
+			if (bikes[i] == null) {
 				
 				j = j + 1 ;
-				
 				
 			}
 			
@@ -254,27 +256,26 @@ public class Station {
 	
 	public int getParkingLotByBike(Bike b) {
 			
-			int i= 0;
 			
-			for (i = 0; i < capacity; i ++) {
+			for (int i = 0; i < capacity; i ++) {
 				
-				if (bikes[i] != null) {
+				if (bikes[i] == b) 
 					
 					return i;
-					
-				}else {
-					return -1;
-				}
-			
 			}
+				
+				
+			return -1;
 			
-			return i;
-	}
-	
+			
+	}	
 	
 	public void addBike(Bike b) throws Exception {
 		
-		
+			if (b == null) {
+				throw new Exception("[ERROR] The bike cannot be null");
+				
+			}
 			
 			if (getParkingLotByBike(b) != -1) {
 				throw new Exception("[ERROR] This bike is already in this station");
@@ -286,10 +287,7 @@ public class Station {
 				
 			}
 			
-			if (b == null) {
-				throw new Exception("[ERROR] The bike cannot be null");
 				
-			}	
 	
 	
 			bikes[getFirstFreeParkingLot()] = b;
@@ -297,6 +295,12 @@ public class Station {
 			b.setStation(this);
 		
 	}	
+	
+	/**
+	 * Remove Bike
+	 * @param Bike remove
+	 * @throws Exception
+	 */
 	
 	public void removeBike(Bike bike) throws Exception {
 		if(getParkingLotByBike(bike) == -1) throw new Exception("[ERROR] This bike does not exist in this station");
