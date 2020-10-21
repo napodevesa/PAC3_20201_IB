@@ -8,7 +8,7 @@ public enum Direction {
 	DOWN(270);
 	
 	private Direction(int angle) {
-		//TODO
+		
 	}
 	
 	public int getAngle() {
