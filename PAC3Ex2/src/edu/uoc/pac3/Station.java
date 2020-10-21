@@ -184,8 +184,8 @@ public class Station {
 
 	
 	
-	public Bike[] getBike() {
-		return this.bike;
+	public Bike[] getBikes() {
+		return this.bikes;
 	}
 
 
@@ -234,25 +234,41 @@ public class Station {
 	
 	public int getNumFreeParkingLots() {
 		
-		int contador = 0;
+		int j = 0;
 		
 		for (int i = 0; i<= capacity;i++) {
 			
-			if (isEmpty()) {
+			if (bike[i] == null) {
 				
-				contador = contador + 1;
+				j = j + 1;
 				
+			}else {
+				return 0;
 			}
 			
 		}
-		return contador;
+		return j;
 		
 	}
 	
-	
-
-
-
-
+	public int getParkingLotByBike(Bike b) {
+			
+			int i= 0;
+			
+			for (i = 0; i<= capacity;i++) {
+				
+				if (bike[i] != null) {
+					
+					return i;
+					
+				}else {
+					return -1;
+				}
+			
+			}
+			
+			return i;
+	}
 }	
+	
 	
