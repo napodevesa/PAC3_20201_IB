@@ -30,8 +30,9 @@ public class Station {
 	 */
 	private Address address;
 	
-	
-	private Bike [] bike ;
+	private Bike [] bikes;
+	 
+    Bike[] bike = new Bike[capacity] ;
 	
 	/**
 	 * Constructor without parameters 
@@ -56,12 +57,13 @@ public class Station {
 	 */
 
 	
-	public Station(String name, String street, double latitude, double longitude, int capacity) throws Exception {
+	public Station(String name, String street, double latitude, double longitude, int capacity ) throws Exception {
 
 		setName(name);
 		setAddress(street,latitude,longitude);
 		setCapacity(capacity);
 		setId();
+		
 		
 		
 	}
@@ -162,7 +164,7 @@ public class Station {
 	/**
 	 * Address Getter
 	 * 
-	 * @return adress
+	 * @return Address
 	 */
 
 	public Address getAddress() {
@@ -180,31 +182,77 @@ public class Station {
 		this.address = new Address(street, latitude, longitude);
 	}
 
-	public Bike [] getBike() {
-		return bike;
+	
+	
+	public Bike[] getBike() {
+		return this.bike;
 	}
 
 
 	public Boolean isFull() {
 		
-		if 
+		for (int i = 0; i<= capacity;i++) {
+			if (bike[i] == null) {
+				return false;
+			}
+		}
+		return true;
 		
-		return null;
 		
 	}
 	
-public Boolean isEmpty() {
-		
-		if {
+	public Boolean isEmpty() {
 			
-			return true;
-			
-		}else
-		
+		for (int i = 0; i<= capacity;i++) {
+			if (bike[i] == null) {
+				return true;
+			}
+		}
 		return false;
 		
+	
 	}
 	
-}
+	public int getFirstFreeParkingLot() {
+		int i=0;
+		
+		for (i = 0; i<= capacity;i++) {
+			if (isFull()) {
+				return -1;
+			}
+			
+			if (bike[i] == null) {
+				return i;
+			}
+		}
+		
+		return i;
 	
+	
+	}
+	
+	
+	public int getNumFreeParkingLots() {
+		
+		int contador = 0;
+		
+		for (int i = 0; i<= capacity;i++) {
+			
+			if (isEmpty()) {
+				
+				contador = contador + 1;
+				
+			}
+			
+		}
+		return contador;
+		
+	}
+	
+	
+
+
+
+
+}	
 	

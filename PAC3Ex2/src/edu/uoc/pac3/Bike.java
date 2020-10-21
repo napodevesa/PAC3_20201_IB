@@ -5,7 +5,7 @@ import java.time.LocalDate;
 /**
  * Address Station
  * 
- * @author Napoleón Devesa Dalio - ndev
+ * @author Napoleón Devesa Dalio ndev
  * @version 1
  */
 
@@ -71,9 +71,6 @@ public class Bike {
 	public Bike( int j, LocalDate object) {
 		// TODO Auto-generated constructor stub
 	}
-
-
-
 
 
 	public LocalDate getLastReparation() {
