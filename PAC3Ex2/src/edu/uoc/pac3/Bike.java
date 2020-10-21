@@ -90,7 +90,7 @@ public class Bike {
 
 	public void setLastReparation(LocalDate date) throws Exception {
 		
-		if (date.compareTo(LocalDate.now()) == -1) {
+		if (date.compareTo(LocalDate.now()) > 0) {
 			throw new Exception("[ERROR] Bike's reparation date cannot be greater than today");
 	
 		}else {
@@ -103,9 +103,7 @@ public class Bike {
 
 	public Station getStation() {
 		return station;
-		if() {
-			return
-		}
+		
 	}
 
 	public void setStation(Station station) {
