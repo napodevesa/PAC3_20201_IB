@@ -133,6 +133,28 @@ public class Station {
 			this.name = name;
 		}
 	}
+	
+	/**
+	 * Address Getter
+	 * 
+	 * @return Address
+	 */
+
+	public Address getAddress() {
+		return this.address;
+	}
+	
+	/**
+	 * Address Setter
+	 * @param street	
+	 * @param latitude
+	 * @param longitude	
+	 */
+
+	public void setAddress(String street, double latitude, double longitude) throws Exception {
+		this.address = new Address(street, latitude, longitude);
+	}
+
 
 
 	/**
@@ -166,27 +188,9 @@ public class Station {
 		}
 	}
 
-	/**
-	 * Address Getter
-	 * 
-	 * @return Address
-	 */
-
-	public Address getAddress() {
-		return this.address;
-	}
 	
-	/**
-	 * Address Setter
-	 * @param street	
-	 * @param latitude
-	 * @param longitude	
-	 */
-
-	public void setAddress(String street, double latitude, double longitude) throws Exception {
-		this.address = new Address(street, latitude, longitude);
-	}
-
+	
+	
 	
 	
 	public Bike [] getBikes() {
@@ -220,11 +224,11 @@ public class Station {
 	}
 	
 	public int getFirstFreeParkingLot() {
-		int i=0;
+		
 		if (isFull()) {
 			return -1;
 		}
-		for (i = 0; i<= capacity;i++) {
+		for (int i = 0; i<= capacity;i++) {
 			
 			if (bikes[i] == null) {
 				return i;
@@ -255,20 +259,15 @@ public class Station {
 	}
 	
 	public int getParkingLotByBike(Bike b) {
-			
-			
-			for (int i = 0; i < capacity; i ++) {
+		
+		for (int i = 0; i < capacity; i++) {
+			if(bikes[i] == b) 
 				
-				if (bikes[i] == b) 
-					
-					return i;
-			}
-				
-				
-			return -1;
-			
-			
-	}	
+				return i;
+		}
+		return -1;
+	}
+	
 	
 	public void addBike(Bike b) throws Exception {
 		

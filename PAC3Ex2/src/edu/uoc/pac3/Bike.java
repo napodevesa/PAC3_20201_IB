@@ -18,7 +18,7 @@ public class Bike {
 	/**
 	 * next Id
 	 */
-	private static int nextId ;
+	private static int nextId=0 ;
 	/**
 	 *last reparation
 	 */
@@ -26,47 +26,33 @@ public class Bike {
 	
 	private Station station;
 	
-	
+	public Bike() {
+		setId();
+	}
 	
 	
 	public int getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId() {
 		this.id = nextId;
-		setNextId(nextId);
+		incNextId();
 		
 	}
 	
 	
 	public static int getNextId() {
-		return nextId + 1;
+		return nextId;
 	}
-
-	public static void setNextId(int nextId) {
+	
+	private void incNextId() {
 		nextId++;
 	}
 
-	/**
-	 * Constructor without parameters 
-	 * 
-	 * 
-	 */
+	
 
-	public Bike() {
-		this( 0, null);
-	}
 
-	/**
-	 * Constructor with parameters 
-	 * 
-	 * 
-	 */
-
-	public Bike( int j, LocalDate object) {
-		// TODO Auto-generated constructor stub
-	}
 
 
 	public LocalDate getLastReparation() {
@@ -91,17 +77,21 @@ public class Bike {
 		
 	}
 
-	public void setStation(Station station) {
+	public void setStation(Station station) throws Exception {
+		Station oldStation = this.station;
+		
+		//Assign it to the new station
 		this.station = station;
+		
+		//If the bike hasn't been removed from the old station, remove it
+		if(oldStation != null && oldStation.getParkingLotByBike(this) != -1) {
+			oldStation.removeBike(this);
+		}
+		
+		//If the bike hasn't been added to the new station, add it
+		if(station != null && station.getParkingLotByBike(this) == -1) {
+			station.addBike(this);
+		}
+	
 	}
-
-
-
-
-	
-	
-
-
 }
-	
-	
