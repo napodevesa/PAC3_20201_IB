@@ -18,13 +18,38 @@ public class Bike {
 	/**
 	 * next Id
 	 */
-	private static int nextId = 0;
+	private static int nextId ;
 	/**
 	 *last reparation
 	 */
 	private LocalDate lastReparation = null;
 	
 	private Station station;
+	
+	
+	
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = nextId;
+		setNextId(nextId);
+		
+	}
+	
+	
+	public static int getNextId() {
+		return nextId + 1;
+	}
+
+	public static void setNextId(int nextId) {
+		nextId++;
+	}
+	
+	
+	
 	
 	
 	/**
@@ -37,7 +62,11 @@ public class Bike {
 		this( 0, null);
 	}
 
-
+	/**
+	 * Constructor with parameters 
+	 * 
+	 * 
+	 */
 
 	public Bike( int j, LocalDate object) {
 		// TODO Auto-generated constructor stub
@@ -45,44 +74,7 @@ public class Bike {
 
 
 
-	/**
-	 * Id Getter
-	 * 
-	 * @return id
-	 */
-	
-	public int getId() {
-		return id;
-	}
-	
-	/**
-	 * Id Setter.
-	 * 
-	 */
-	
-	private void setId() {
-		id = nextId;
-		plusId();
-	}
 
-	/**
-	 * Next Id Getter
-	 * 
-	 * @return nextId
-	 */
-	
-	public static int getNextId() {
-		return nextId;
-	}
-	
-	/**
-	 * next id ++
-	 */
-
-	
-	private void plusId() {
-		nextId++;
-	}
 
 	public LocalDate getLastReparation() {
 		return lastReparation;
@@ -109,6 +101,10 @@ public class Bike {
 	public void setStation(Station station) {
 		this.station = station;
 	}
+
+
+
+
 	
 	
 
