@@ -46,7 +46,7 @@ public class Bike {
 
 	public void setId() {
 		this.id = nextId;
-		incNextId();
+		plus();
 		
 	}
 	/**
@@ -59,7 +59,14 @@ public class Bike {
 		return nextId;
 	}
 	
-	private void incNextId() {
+	/**
+	 * 
+	 * plus = Next Id ++
+	 * 
+	 * 
+	 */
+	
+	private void plus() {
 		nextId++;
 	}
 	
@@ -76,7 +83,7 @@ public class Bike {
 	/**
 	 * LastRepatation Setter
 	 * 
-	 * 
+	 * @throws Exceptions, Bike's reparation date cannot be greater than today
 	 */
 
 	public void setLastReparation(LocalDate date) throws Exception {
@@ -104,21 +111,21 @@ public class Bike {
 	/**
 	 * Station Setter
 	 * 
-	 * 
+	 * @throws Exceptions
 	 */
 
 	public void setStation(Station station) throws Exception {
-		Station oldStation = this.station;
 		
-		//Assign it to the new station
+		Station s = this.station;
+		
 		this.station = station;
 		
-		//If the bike hasn't been removed from the old station, remove it
-		if(oldStation != null && oldStation.getParkingLotByBike(this) != -1) {
-			oldStation.removeBike(this);
+	
+		if(s != null && s.getParkingLotByBike(this) != -1) {
+			s.removeBike(this);
 		}
 		
-		//If the bike hasn't been added to the new station, add it
+		
 		if(station != null && station.getParkingLotByBike(this) == -1) {
 			station.addBike(this);
 		}

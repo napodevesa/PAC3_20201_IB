@@ -24,9 +24,9 @@ public class Address {
 	public double longitude = 0;
 
 	/** Address constructor
-	 * @param street 	
-	 * @param latitude	
-	 * @param longitude	
+	 * @param Street 	
+	 * @param Latitude	
+	 * @param Longitude	
 	 */
 	
 	public Address(String street, double latitude, double longitude) throws Exception {
@@ -68,7 +68,7 @@ public class Address {
 	/**
 	 * Latitude Setter
 	 * 
-	 * 
+	 * @throws Exceptions, Address' latitude must be in range [-90,+90]
 	 */
 
 	public void setLatitude(double latitude) throws Exception {
@@ -93,6 +93,7 @@ public class Address {
 	/**
 	 * Longitude Setter
 	 * 
+	 * @throws Exceptions, Address' longitude must be in range [-180,+180]
 	 */
 
 	public void setLongitude(double longitude)  throws Exception {

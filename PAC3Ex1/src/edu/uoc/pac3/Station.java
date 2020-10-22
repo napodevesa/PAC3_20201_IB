@@ -33,7 +33,7 @@ public class Station {
 	/**
 	 * Constructor Without Parameters 
 	 * 
-	 * @throws exceptions
+	 * @throws Exceptions
 	 */
 	
 	
@@ -79,7 +79,7 @@ public class Station {
 	
 	private void setId() {
 		id = nextId;
-		plusId();
+		plus();
 	}
 
 	/**
@@ -97,7 +97,7 @@ public class Station {
 	 */
 
 	
-	private void plusId() {
+	private void plus() {
 		nextId++;
 	}
 	
@@ -143,7 +143,7 @@ public class Station {
 	/**
 	 * Capacity Setter
 	 * 
-	 * 
+	 * @throws Exception
 	 */
 
 

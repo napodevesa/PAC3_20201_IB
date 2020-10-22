@@ -5,43 +5,51 @@ package edu.uoc.pac3;
  * 
  * @author NDevesa
  * @version 1
+ * 
+ * 
  */
 
 
 public class Station {
 	/**
-	 * The id of the Station
+	 * Station Id
+	 * 
+	 * 
 	 */
 	private int id;
 	/**
-	 * next Id
+	 * Next Id
+	 * 
+	 * 
 	 */
 	private static int nextId = 0;
 	/**
 	 * name of the Station
+	 * 
 	 */
 	private String name = "Default";
 	/**
-	 * Capacity of the Station
+	 * Station Capacity
+	 * 
 	 */
 	private int capacity = 24;
 	/**
-	 * The address of the Station.
+	 *  Station Address
+	 *  
 	 */
 	private Address address;
 	
 	private Bike[] bikes = new Bike[capacity] ;
 	
-	
-	
-	 
+
     
 	/**
-	 * Constructor without parameters 
+	 * Constructor Without Parameters 
+	 * 
+	 * 
 	 * 
 	 * @throws exceptions
 	 */
-	
 	
 	public Station() throws Exception {
 		this("Default", "Sesame Street", 0.0, 0.0, 24);
@@ -50,12 +58,14 @@ public class Station {
 	/**
 	 * Constructor with parameters
 	 * 
-	 * @param name      
-	 * @param street    
-	 * @param latitude  
-	 * @param longitude 
-	 * @param capacity  
+	 * @param Name      
+	 * @param Street    
+	 * @param Latitude  
+	 * @param Longitude 
+	 * @param Capacity  
 	 * @throws Exception 
+	 * 
+	 * 
 	 */
 
 	
@@ -71,7 +81,8 @@ public class Station {
 	/**
 	 * Id Getter
 	 * 
-	 * @return id
+	 * 
+	 * @return Id
 	 */
 	
 	public int getId() {
@@ -79,19 +90,23 @@ public class Station {
 	}
 	
 	/**
-	 * Id Setter.
+	 * Id Setter
+	 * 
+	 * 
 	 * 
 	 */
 	
 	private void setId() {
 		id = nextId;
-		plusId();
+		plus();
 	}
 
 	/**
 	 * Next Id Getter
 	 * 
-	 * @return nextId
+	 * 
+	 * 
+	 * @return Next Id
 	 */
 	
 	public static int getNextId() {
@@ -99,18 +114,23 @@ public class Station {
 	}
 	
 	/**
-	 * next id ++
+	 * 
+	 * plus = Next Id ++
+	 * 
+	 * 
 	 */
 
 	
-	private void plusId() {
+	private void plus() {
 		nextId++;
 	}
 	
 	/**
-	 * Name Getter.
+	 * Name Getter
 	 * 
-	 * @return name of Station
+	 * @return Station Name
+	 * 
+	 * 
 	 */
 
 	
@@ -119,10 +139,12 @@ public class Station {
 	}
 	
 	/**
-	 * Name setter.
+	 * Name Setter
 	 * 
-	 * @param name 
-	 * @throws Exception 
+	 * @param Name 
+	 * @throws Exception, Station's name cannot be longer than 50 characters 
+	 * 
+	 * 
 	 */
 
 	
@@ -138,6 +160,7 @@ public class Station {
 	 * Address Getter
 	 * 
 	 * @return Address
+	 * 
 	 */
 
 	public Address getAddress() {
@@ -145,10 +168,14 @@ public class Station {
 	}
 	
 	/**
+	 * 
+	 * 
 	 * Address Setter
-	 * @param street	
-	 * @param latitude
-	 * @param longitude	
+	 * @param Street	
+	 * @param Latitude
+	 * @param Longitude	
+	 * 
+	 * 
 	 */
 
 	public void setAddress(String street, double latitude, double longitude) throws Exception {
@@ -159,7 +186,9 @@ public class Station {
 	/**
 	 * Cap Getter
 	 * 
-	 * @return nextId
+	 * @return Next Id
+	 * 
+	 * 
 	 */
 	
 	public int getCapacity() {
@@ -179,9 +208,11 @@ public class Station {
 			throw new Exception("[ERROR] Station's capacity must be greater than 0");
 		} 
 		
-		else if (!this.isEmpty()){
+		else if (this.isEmpty()== false){
 			throw new Exception("[ERROR] Station is not empty, therefore you cannot change its capacity");
+		
 		} else {
+			
 			this.capacity = capacity;
 			bikes = new Bike[capacity];
 		}
@@ -192,14 +223,24 @@ public class Station {
 	/**
 	 * Bikes Getter
 	 * 
+	 * 
 	 * @return Bikes
+	 * 
+	 * 
 	 */
 	
 	
 	public Bike [] getBikes() {
 		return bikes;
 	}
-	
+	/**
+	 * IsFull 
+	 * 
+	 * 
+	 * @return Boolean
+	 * 
+	 * 
+	 */
 
 
 	public Boolean isFull() {
@@ -214,6 +255,15 @@ public class Station {
 		
 	}
 	
+	/**
+	 * IsEmpty
+	 * 
+	 * 
+	 * @return Boolean
+	 * 
+	 * 
+	 */
+	
 	public Boolean isEmpty() {
 			
 		for (int i = 0; i<= capacity;i++) {
@@ -225,6 +275,15 @@ public class Station {
 		
 	
 	}
+	
+	/**
+	 * First Free Parking Lot 
+	 * 
+	 * 
+	 * @return Index
+	 * 
+	 * 
+	 */
 	
 	public int getFirstFreeParkingLot() {
 		
@@ -242,6 +301,15 @@ public class Station {
 	
 	
 	}
+	
+	/**
+	 * Free Parking Lots
+	 * 
+	 * 
+	 * @return Counter
+	 * 
+	 * 
+	 */
 	
 	
 	public int getNumFreeParkingLots() {
@@ -261,6 +329,15 @@ public class Station {
 		
 	}
 	
+	/**
+	 * Parking Lot By Bike
+	 * 
+	 * @param Bike
+	 * @return Index
+	 * 
+	 * 
+	 */
+	
 	public int getParkingLotByBike(Bike b) {
 		
 		for (int i = 0; i < capacity; i++) {
@@ -270,7 +347,15 @@ public class Station {
 		}
 		return -1;
 	}
-	
+	/**
+	 * Add a Bike
+	 * 
+	 * @param Bike
+	 * 
+	 * @throws Exception when Bike is null 
+	 * @throws Exception when Station is full 
+	 * @throws Exception when bike is already in the Station
+	 */
 	
 	public void addBike(Bike b) throws Exception {
 		
@@ -297,25 +382,25 @@ public class Station {
 	}	
 	
 	/**
-	 * Remove Bike
-	 * @param Bike remove
+	 * Remove a Bike
 	 * 
-	 * @throws Exception
+	 * 
+	 * @param Bike 
+	 * @throws Exception when the Bike does not exist in this Station
 	 * 
 	 */
 	
 	public void removeBike(Bike bike) throws Exception {
-		if(getParkingLotByBike(bike) == -1) throw new Exception("[ERROR] This bike does not exist in this station");
+		
+		if(getParkingLotByBike(bike) == -1) {
+			
+		throw new Exception("[ERROR] This bike does not exist in this station");
+		}
 		
 		bikes[getParkingLotByBike(bike)] = null;
 		
 		bike.setStation(null);
 	}
-	
-	
-	
-	
-	
 	
 	
 	

@@ -21,16 +21,33 @@ public enum Direction {
 	private Direction(int angle) {
 		this.angle = angle;
 	}
+	/**
+	 * getAngle
+	 * @return Angle
+	 * 
+	 * 
+	 */
 	
 	public int getAngle() {
 		return this.angle;
 	}
-	
+	/**
+	 * toString
+	 * @return Direction
+	 * 
+	 * 
+	 */
 	@Override
 	public String toString() {
 		return "You are moving " + this.name();
 	}
-	
+	/**
+	 * getDirection
+	 * @param Angle
+	 * @return Direction
+	 * 
+	 * 
+	 */
 	
 	public static Direction getDirection(int angle) {   	 
 		
