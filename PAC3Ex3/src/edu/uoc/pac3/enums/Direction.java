@@ -8,7 +8,6 @@ public enum Direction {
 	DOWN(270);
 	
 	
-
 	private int angle;
 
 	private Direction(int angle) {
@@ -31,29 +30,25 @@ public enum Direction {
 			angle = angle - 360;
 		}	
 		
-			if (angle == 0 || angle > 315  && angle < 45) {
+			if (angle == 0 || angle > 315  && angle <= 45) {
 				return RIGHT;
 			}
 			
-			if (angle == 90 || angle > 45 && angle < 135) {
+			if (angle == 90 || angle > 45 && angle <= 135) {
 				return UP;
 			}
 			
-			if (angle == 180 || angle > 135 && angle < 225){
+			if (angle == 180 || angle > 135 && angle <= 225){
 				return LEFT;
 			}
 			
-			if (angle == 270 || angle > 225 && angle < 315) {
+			if (angle == 270 || angle > 225 && angle <= 315) {
 				return DOWN;
 			}
 		
-
-		
 		return null;
 	
-	
 	}
-	
 	
 
 }	
