@@ -1,1 +1,0 @@
-typeSearchIndex = [{"p":"edu.uoc.pac3","l":"Address"},{"l":"All Classes","url":"allclasses-index.html"},{"p":"edu.uoc.pac3","l":"Station"}]
