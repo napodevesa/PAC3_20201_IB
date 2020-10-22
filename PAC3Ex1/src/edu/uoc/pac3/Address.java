@@ -3,22 +3,22 @@ package edu.uoc.pac3;
 /**
  * Address Station
  * 
- * @author Napoleón Devesa Dalio - ndev
+ * @author NDevesa
  * @version 1
  */
 
 public class Address {
 	/**
-	 * The street name
+	 * Street Name
 	 */
 	public String street = "Sesame Street";
 	/**
-	 * The latitude
+	 * TLatitude
 	 */
 
 	public double latitude = 0;
 	/**
-	 * The longitude
+	 * Longitude
 	 */
 	
 	public double longitude = 0;
@@ -40,7 +40,7 @@ public class Address {
 	/**
 	 * Street Getter
 	 * 
-	 * @return street
+	 * @return Street
 	 */
 	public String getStreet() {
 		return street;
@@ -58,7 +58,7 @@ public class Address {
 	/**
 	 * Latitude Getter
 	 * 
-	 * @return latitude
+	 * @return Latitude
 	 */
 
 	public double getLatitude() {
@@ -82,7 +82,7 @@ public class Address {
 	/**
 	 * Longitude Getter
 	 * 
-	 * @return longitude
+	 * @return Longitude
 	 */
 
 
@@ -92,7 +92,6 @@ public class Address {
 	
 	/**
 	 * Longitude Setter
-	 * 
 	 * 
 	 */
 

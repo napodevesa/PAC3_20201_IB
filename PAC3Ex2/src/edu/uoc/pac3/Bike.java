@@ -30,17 +30,30 @@ public class Bike {
 		setId();
 	}
 	
-	
+	/**
+	 * Id Getter
+	 * 
+	 * @return Id
+	 */
 	public int getId() {
 		return id;
 	}
+	/**
+	 * Id Setter
+	 * 
+	 * 
+	 */
 
 	public void setId() {
 		this.id = nextId;
 		incNextId();
 		
 	}
-	
+	/**
+	 * NextID Getter
+	 * 
+	 * @return Next Id
+	 */
 	
 	public static int getNextId() {
 		return nextId;
@@ -49,15 +62,22 @@ public class Bike {
 	private void incNextId() {
 		nextId++;
 	}
+	
+	/**
+	 * Last Reparation Getter
+	 * 
+	 * @return Last Reparation
+	 */
 
 	
-
-
-
-
 	public LocalDate getLastReparation() {
 		return lastReparation;
 	}
+	/**
+	 * LastRepatation Setter
+	 * 
+	 * 
+	 */
 
 	public void setLastReparation(LocalDate date) throws Exception {
 		
@@ -71,11 +91,21 @@ public class Bike {
 	
 	}
 	
-
+	/**
+	 * Station Getter
+	 * 
+	 * @return Station
+	 */
 	public Station getStation() {
 		return station;
 		
 	}
+	
+	/**
+	 * Station Setter
+	 * 
+	 * 
+	 */
 
 	public void setStation(Station station) throws Exception {
 		Station oldStation = this.station;

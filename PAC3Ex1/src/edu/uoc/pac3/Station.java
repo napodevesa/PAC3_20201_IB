@@ -3,7 +3,7 @@ package edu.uoc.pac3;
 /**
  * Class Station
  * 
- * @author Napoleón Devesa Dalio - ndev
+ * @author NDevesa
  * @version 1
  */
 
@@ -31,7 +31,7 @@ public class Station {
 	private Address address;
 	
 	/**
-	 * Constructor without parameters 
+	 * Constructor Without Parameters 
 	 * 
 	 * @throws exceptions
 	 */
@@ -42,7 +42,7 @@ public class Station {
 	}
 	
 	/**
-	 * Constructor wiht parameters
+	 * Constructor with parameters
 	 * 
 	 * @param name      
 	 * @param street    
@@ -73,7 +73,7 @@ public class Station {
 	}
 	
 	/**
-	 * Id Setter.
+	 * Id Setter
 	 * 
 	 */
 	
@@ -93,7 +93,7 @@ public class Station {
 	}
 	
 	/**
-	 * next id ++
+	 * Next Id 
 	 */
 
 	
@@ -102,7 +102,7 @@ public class Station {
 	}
 	
 	/**
-	 * Name Getter.
+	 * Name Getter
 	 * 
 	 * @return name of Station
 	 */
@@ -113,7 +113,7 @@ public class Station {
 	}
 	
 	/**
-	 * Name setter.
+	 * Name Setter
 	 * 
 	 * @param name 
 	 * @throws Exception 
@@ -130,7 +130,7 @@ public class Station {
 
 
 	/**
-	 * Cap Getter
+	 * Capacity Getter
 	 * 
 	 * @return nextId
 	 */
@@ -141,7 +141,7 @@ public class Station {
 	
 
 	/**
-	 * Cap Setter
+	 * Capacity Setter
 	 * 
 	 * 
 	 */
@@ -158,7 +158,7 @@ public class Station {
 	/**
 	 * Address Getter
 	 * 
-	 * @return adress
+	 * @return Address
 	 */
 
 	public Address getAddress() {
@@ -167,9 +167,9 @@ public class Station {
 	
 	/**
 	 * Address Setter
-	 * @param street	
-	 * @param latitude
-	 * @param longitude	
+	 * @param Street	
+	 * @param Latitude
+	 * @param Longitude	
 	 */
 
 	public void setAddress(String street, double latitude, double longitude) throws Exception {

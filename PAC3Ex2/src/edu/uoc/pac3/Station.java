@@ -156,7 +156,6 @@ public class Station {
 	}
 
 
-
 	/**
 	 * Cap Getter
 	 * 
@@ -169,7 +168,7 @@ public class Station {
 	
 
 	/**
-	 * Cap Setter
+	 * Capacity Setter
 	 * 
 	 * 
 	 */
@@ -190,7 +189,11 @@ public class Station {
 
 	
 	
-	
+	/**
+	 * Bikes Getter
+	 * 
+	 * @return Bikes
+	 */
 	
 	
 	public Bike [] getBikes() {
@@ -286,8 +289,6 @@ public class Station {
 				
 			}
 			
-				
-	
 	
 			bikes[getFirstFreeParkingLot()] = b;
 			
@@ -298,7 +299,9 @@ public class Station {
 	/**
 	 * Remove Bike
 	 * @param Bike remove
+	 * 
 	 * @throws Exception
+	 * 
 	 */
 	
 	public void removeBike(Bike bike) throws Exception {

@@ -1,5 +1,13 @@
 package edu.uoc.pac3.enums;
 
+/**
+ * Address Station
+ * 
+ * @author NDevesa
+ * @version 1
+ */
+
+
 public enum Direction {
 
 	RIGHT(0),

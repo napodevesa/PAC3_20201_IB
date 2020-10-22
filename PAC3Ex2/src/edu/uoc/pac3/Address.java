@@ -9,24 +9,27 @@ package edu.uoc.pac3;
 
 public class Address {
 	/**
-	 * The street name
+	 * Street Name
+	 * 
 	 */
 	public String street = "Sesame Street";
 	/**
-	 * The latitude
+	 * Latitude
+	 * 
 	 */
 
 	public double latitude = 0;
 	/**
-	 * The longitude
+	 * Longitude
+	 * 
 	 */
 	
 	public double longitude = 0;
 
-	/** Address constructor
-	 * @param street 	
-	 * @param latitude	
-	 * @param longitude	
+	/** Address Constructor
+	 * @param Street 	
+	 * @param Latitude	
+	 * @param Longitude	
 	 */
 	
 	public Address(String street, double latitude, double longitude) throws Exception {
@@ -39,8 +42,8 @@ public class Address {
 	
 	/**
 	 * Street Getter
+	 * @return Street
 	 * 
-	 * @return street
 	 */
 	public String getStreet() {
 		return street;
@@ -58,7 +61,7 @@ public class Address {
 	/**
 	 * Latitude Getter
 	 * 
-	 * @return latitude
+	 * @return Latitude
 	 */
 
 	public double getLatitude() {
@@ -82,7 +85,7 @@ public class Address {
 	/**
 	 * Longitude Getter
 	 * 
-	 * @return longitude
+	 * @return Longitude
 	 */
 
 
